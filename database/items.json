@@ -1,0 +1,26 @@
+{
+  "nextId": 4,
+  "items": [
+    {
+      "id": 1,
+      "name": "Donald Trump",
+      "type": "Player",
+      "rarity": "Very Rare",
+      "createdAt": "2026-04-22T17:32:29.967Z"
+    },
+    {
+      "id": 2,
+      "name": "Elon Musk",
+      "type": "Player",
+      "rarity": "Epic",
+      "createdAt": "2026-04-22T17:33:32.384Z"
+    },
+    {
+      "id": 3,
+      "name": "Freefly",
+      "type": "Game",
+      "rarity": "Heroic",
+      "createdAt": "2026-04-22T17:34:06.824Z"
+    }
+  ]
+}
