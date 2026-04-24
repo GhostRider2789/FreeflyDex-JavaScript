@@ -51,6 +51,23 @@ async function getItem(id) {
     return db.items.find(item => item.id === id);
 }
 
+// Get all items
+async function getAllItems() {
+    const data = await readItems();
+    return data.items;
+}
+
+// Delete item
+async function deleteItem(id) {
+    const db = await readItems();
+    const index = db.items.findIndex(item => item.id === id);
+    if (index === -1) throw new Error('Item not found');
+    const deleted = db.items[index];
+    db.items.splice(index, 1);
+    await writeItems(db);
+    return deleted;
+}
+
 // Users
 async function readUsers() {
     const data = await fs.readFile(USERS_FILE, 'utf8');
@@ -90,5 +107,7 @@ module.exports = {
     createItem,
     getItem,
     getUserInventory,
-    addItemToUser
+    addItemToUser,
+    deleteItem,
+    getAllItems
 };

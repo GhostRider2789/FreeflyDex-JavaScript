@@ -1,26 +1,54 @@
 {
-  "nextId": 4,
+  "nextId": 14,
   "items": [
     {
       "id": 1,
-      "name": "Donald Trump",
-      "type": "Player",
-      "rarity": "Very Rare",
-      "createdAt": "2026-04-22T17:32:29.967Z"
+      "name": "Freefly",
+      "type": null,
+      "rarity": "Exotic",
+      "createdAt": "2026-04-23T20:30:35.171Z"
     },
     {
       "id": 2,
-      "name": "Elon Musk",
-      "type": "Player",
-      "rarity": "Epic",
-      "createdAt": "2026-04-22T17:33:32.384Z"
+      "name": "Cooldode",
+      "type": null,
+      "rarity": "Legendary",
+      "createdAt": "2026-04-23T20:32:17.885Z"
     },
     {
-      "id": 3,
-      "name": "Freefly",
-      "type": "Game",
-      "rarity": "Heroic",
-      "createdAt": "2026-04-22T17:34:06.824Z"
+      "id": 6,
+      "name": "fussy goat",
+      "type": "Staff",
+      "rarity": "Mythic",
+      "createdAt": "2026-04-23T20:48:18.886Z"
+    },
+    {
+      "id": 10,
+      "name": "Phamy",
+      "type": "Player",
+      "rarity": "Legendary",
+      "createdAt": "2026-04-24T23:17:53.620Z"
+    },
+    {
+      "id": 11,
+      "name": "Ghosty",
+      "type": "Staff",
+      "rarity": "Epic",
+      "createdAt": "2026-04-24T23:18:41.372Z"
+    },
+    {
+      "id": 12,
+      "name": "Lane",
+      "type": "Staff",
+      "rarity": "Epic",
+      "createdAt": "2026-04-24T23:19:00.789Z"
+    },
+    {
+      "id": 13,
+      "name": "Pinecone",
+      "type": "Staff",
+      "rarity": "Epic",
+      "createdAt": "2026-04-24T23:19:15.243Z"
     }
   ]
 }

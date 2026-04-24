@@ -36,11 +36,23 @@ for (const file of adminCommandFiles) {
   }
 }
 
+// Load regular commands
+const commandsPath = path.join(__dirname, 'commands');
+const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+
+for (const file of commandFiles) {
+  const filePath = path.join(commandsPath, file);
+  const command = require(filePath);
+  if ('data' in command && 'execute' in command) {
+    client.commands.set(command.data.name, command);
+  }
+}
+
 // Handle interactions
 client.on("interactionCreate", async (interaction) => {
   if (!interaction.isChatInputCommand()) return;
 
-  const command = client.adminCommands.get(interaction.commandName);
+  const command = client.adminCommands.get(interaction.commandName) || client.commands.get(interaction.commandName);
   if (!command) return;
 
   try {
@@ -60,6 +72,9 @@ client.once("clientReady", async () => {
   const rest = new REST({ version: "10" }).setToken(config.token);
   const commands = [];
   for (const cmd of client.adminCommands.values()) {
+    commands.push(cmd.data.toJSON());
+  }
+  for (const cmd of client.commands.values()) {
     commands.push(cmd.data.toJSON());
   }
   await rest.put(Routes.applicationCommands(client.user.id), {
