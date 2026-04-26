@@ -16,7 +16,7 @@ const ITEMS_PER_PAGE = 10;
 
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('itemlist')
+        .setName('raritylist')
         .setDescription('View all items by rarity'),
     
     async execute(interaction) {
