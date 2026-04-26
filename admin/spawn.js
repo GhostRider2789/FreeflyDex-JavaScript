@@ -110,13 +110,14 @@ module.exports = {
         const channel = interaction.channel;
 
         let spawned = 0;
-        const spawnInterval = setInterval(() => {
-            if (spawned >= count) {
-                clearInterval(spawnInterval);
-                return;
+        while (spawned < count) {
+            const result = await spawnItem(channel);  // Waits for completion
+            if (result !== null) {
+                spawned++;
             }
-            spawnItem(channel);
-            spawned++;
-        }, 5000);
+            await new Promise(resolve => setTimeout(resolve, 2000));
+        }
+        
+        await interaction.followUp(`✅ Finished spawning ${spawned} items!`);
     }
 }
